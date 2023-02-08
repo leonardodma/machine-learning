@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "machine-learning"
+version = "0.1.0"
+description = ""
+authors = ["Leonardo Malta <leonardodma@al.insper.edu.br>"]
+readme = "README.md"
+packages = [{include = "machine_learning"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyterlab = "^3.6.1"
+matplotlib = "^3.6.3"
+pandas = "^1.5.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

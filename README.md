@@ -127,3 +127,33 @@ plt.plot(x, y_pred, color='blue', linewidth=3)
 ```
 
 For more information, see [Linear Regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).
+
+## Multiple Linear Regression
+
+Multiple linear regression is an extension of linear regression that involves more than one explanatory variable. The goal of multiple linear regression is to model the linear relationship between the explanatory variables and the response variable.
+
+### One Hot Encoding
+
+One hot encoding is a process by which categorical variables are converted into a form that could be provided to ML algorithms to do a better job in prediction. One hot encoding creates a new column for each unique category in a categorical variable. The new columns are binary (0 or 1) and only one column will have a 1 (for each row of data). The column with a 1 will indicate the category that the row belongs to.
+
+**Example:**
+
+| Color | Size | Label  |
+| ----- | ---- | ------ |
+| Red   | S    | Apple  |
+| Red   | M    | Apple  |
+| Red   | L    | Orange |
+| Green | S    | Orange |
+| Green | M    | Apple  |
+| Green | L    | Banana |
+
+**One Hot Encoding:**
+
+| Color_Red | Color_Green | Size_S | Size_M | Size_L | Label  |
+| --------- | ----------- | ------ | ------ | ------ | ------ |
+| 1         | 0           | 1      | 0      | 0      | Apple  |
+| 1         | 0           | 0      | 1      | 0      | Apple  |
+| 1         | 0           | 0      | 0      | 1      | Orange |
+| 0         | 1           | 1      | 0      | 0      | Orange |
+| 0         | 1           | 0      | 1      | 0      | Apple  |
+| 0         | 1           | 0      | 0      | 1      | Banana |

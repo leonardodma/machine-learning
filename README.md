@@ -15,6 +15,14 @@ Machine learning is foucsed on prediction and inference, while statistics is foc
 - Continuous: Numerical variable with an infinite number of possible values, e.g. height, weight
 - Discrete: Numerical variable with a finite number of possible values, e.g. number of children
 
+## Models
+
+Models are a way to represent the relationship between the features and the target variable. The goal of a model is to learn the relationship between the features and the target variable so that we can predict the target variable for new data. It is a **Combination of all possible candidate function**s.
+
+**Parametric models:** Find a candidate function that minimizes the error between the predicted values and the actual values trough a set of parameters. The parameters are learned from the training data. The model is trained to find the best parameters.
+
+**No parametric models:** functions that is not defined by a set of parameters, such as decision trees. The model is trained to find the best structure.
+
 ## Linear Regression
 
 Linear regression is a linear approach to modeling the relationship between a scalar response and one or more explanatory variables (also known as dependent and independent variables). The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.
@@ -134,7 +142,7 @@ Multiple linear regression is an extension of linear regression that involves mo
 
 ### One Hot Encoding
 
-One hot encoding is a process by which categorical variables are converted into a form that could be provided to ML algorithms to do a better job in prediction. One hot encoding creates a new column for each unique category in a categorical variable. The new columns are binary (0 or 1) and only one column will have a 1 (for each row of data). The column with a 1 will indicate the category that the row belongs to.
+One hot encoding is a process by which **categorical variables** are converted into a form that could be provided to ML algorithms to do a better job in prediction. One hot encoding creates a new column for each unique category in a **categorical variable.** The new columns are binary (0 or 1) and only one column will have a 1 (for each row of data). The column with a 1 will indicate the category that the row belongs to.
 
 **Example:**
 
@@ -157,3 +165,22 @@ One hot encoding is a process by which categorical variables are converted into 
 | 0         | 1           | 1      | 0      | 0      | Orange |
 | 0         | 1           | 0      | 1      | 0      | Apple  |
 | 0         | 1           | 0      | 0      | 1      | Banana |
+
+**Example of implementation:**
+
+```python
+import pandas as pd
+
+# Create a dataframe
+df = pd.DataFrame({
+    'Color': ['Red', 'Red', 'Red', 'Green', 'Green', 'Green'],
+    'Size': ['S', 'M', 'L', 'S', 'M', 'L'],
+    'Label': ['Apple', 'Apple', 'Orange', 'Orange', 'Apple', 'Banana']
+})
+
+# One hot encoding
+df = pd.get_dummies(df, columns=['Color', 'Size'])
+
+# Print the dataframe
+print(df)
+```

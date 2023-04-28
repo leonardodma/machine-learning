@@ -177,13 +177,24 @@ Random forest regression is a type of regression algorithm that uses ensemble le
 
 Decision tree is a supervised learning algorithm that can be used for both classification and regression problems. It is a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility.
 
+Parameters:
+
+- **Criterion:** The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.
+  - **Gini impurity:** A measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset. It reaches its minimum (zero) when all cases in the node fall into a single target category.
+  - **Information gain:** The expected reduction in entropy caused by partitioning the examples according to this attribute. It reaches its maximum (one) when all cases in the node fall into a single target category.
+- **Max Depth:** The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.
+
 #### Random Forest
 
 Random forest is a supervised learning algorithm that can be used for both classification and regression problems. It is a tree-like model of decisions and their possible consequences, including chance event outcomes, resource costs, and utility.
 
+This algorithm is based on the idea of creating multiple decision trees and combining their predictions to get a more accurate prediction than a single decision tree. **This idea is supported by the fact that multiple weak learners can outperform a single strong learner.**
+
 #### Support Vector Machine (SVM)
 
 In an SVM algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate. Then, we perform classification by finding the hyper-plane that differentiate the two classes very well. The hyper-plane is the line or plane that separates the two classes.
+
+**It is mandatory to scale the features before training the SVM algorithm.**
 
 #### K-Nearest Neighbors (KNN)
 
@@ -207,6 +218,29 @@ Basically, Bayes' theorem calculates the conditional probability of the occurren
 #### Logistic Regression
 
 This regression is used when the **dependent variable is categorical**. It is used to estimate the probability of a binary outcome (1 / 0, Yes / No, True / False) given a set of independent variables.
+
+---
+
+## Boosting Algorithms
+
+Using a set of learning algorithms to improve the predictive power of the model.
+
+### AdaBoost
+
+AdaBoost is a boosting algorithm that combines multiple weak learners into a single strong learner. AdaBoost works by choosing a base algorithm (e.g. decision trees) and iteratively improving it by accounting for the incorrectly classified examples in the training set.
+
+### Gradient Boosting (MOST USED)
+
+Gradient boosting is a boosting algorithm that combines multiple weak learners into a single strong learner in an iterative fashion. It is a generalization of boosting to arbitrary differentiable loss functions.
+
+- One of the most powerful techniques for building predictive models.
+
+### Others
+
+- XGBoost
+- LightGBM
+- CatBoost
+- Voting Classifier
 
 ---
 
@@ -342,3 +376,69 @@ It is important to note that precision and recall are often in conflict. Increas
 
 - **Overfitting:** Overfitting occurs when a model fits the training data too well. The model is too complex and does not generalize well to new data. Overfitting is a problem because the model will have a high accuracy on the training data, but a low accuracy on the test data.
 - **Underfitting:** Underfitting occurs when a model is not complex enough to capture the underlying structure of the data. The model is too simple and does not generalize well to new data. Underfitting is a problem because the model will have a low accuracy on both the training data and the test data.
+
+---
+
+# Statistics
+
+## Distributions
+
+### Normal Distribution
+
+[Normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) is a continuous probability distribution. It is also called **Gaussian distribution**. It is a bell-shaped curve.
+
+![Normal Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/1280px-Normal_Distribution_PDF.svg.png)
+
+### Skewed Distribution
+
+A [skewed distribution](https://en.wikipedia.org/wiki/Skewness) is a distribution that is not symmetrical. It is a result of outliers.
+
+![Skewed Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Relationship_between_mean_and_median_under_different_skewness.png/1280px-Relationship_between_mean_and_median_under_different_skewness.png)
+
+### Binomial Distribution
+
+[Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) is a discrete probability distribution. It is a result of a binary outcome.
+
+![Binomial Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Binomial_distribution_pmf.svg/1280px-Binomial_distribution_pmf.svg.png)
+
+### Poisson Distribution
+
+[Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution) is a discrete probability distribution. It is a result of a count of events.
+
+![Poisson Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Poisson_pmf.svg/1280px-Poisson_pmf.svg.png)
+
+### Uniform Distribution
+
+[Uniform distribution](<https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)>) is a continuous probability distribution. It is a result of a random experiment.
+
+![Uniform Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Uniform_Distribution_PDF_SVG.svg/1280px-Uniform_Distribution_PDF_SVG.svg.png)
+
+### Exponential Distribution
+
+[Exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) is a continuous probability distribution. It is a result of a Poisson process.
+
+![Exponential Distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Exponential_pdf.svg/1280px-Exponential_pdf.svg.png)
+
+### Bernoulli Distribution
+
+[Bernoulli distribution](https://en.wikipedia.org/wiki/Bernoulli_distribution) is a discrete probability distribution. It is a result of a binary outcome.
+
+![Bernoulli Distribution](<https://probabilitycourse.com/images/chapter3/geometric(p=0.3)%20color.png>)
+
+## Hypothesis Testing
+
+### What is hypothesis testing?
+
+Hypothesis testing is a statistical method that is used in making statistical decisions using experimental data. Hypothesis testing is used to evaluate the results of an experiment and draw conclusions.
+
+### What is a hypothesis?
+
+A hypothesis is a statement about a population parameter. The hypothesis is assumed to be true until proven otherwise.
+
+### T Test
+
+H<sub>0</sub>: The null hypothesis is a statement of "no difference," "no effect," or "no association" between two sets of data. It is the hypothesis that the researcher is trying to disprove.
+
+H<sub>a</sub>: The alternative hypothesis is a statement of "difference," "effect," or "association" between two sets of data. It is the hypothesis that the researcher is trying to prove.
+
+The objective of the t-test is to provide evidence **against the null hypothesis**. The t-test is used to determine whether the null hypothesis should be rejected in favor of the alternative hypothesis.
